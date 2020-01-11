@@ -12,7 +12,7 @@ Dec 2019 - Feb 2020
 
 2. Problem set from [Baejoon Online Judge](https://www.acmicpc.net/problem/7615) and [Algospot](https://www.algospot.com)
 
-## Contencts
+## Contents
 
 - `Dec 24th, Tue, 2019` Algorithm Thinking and Models of Computation 
 - `Dec 30th, Mon, 2019` Insertion sort, Merge sort, Heap sort and Binary search tree
