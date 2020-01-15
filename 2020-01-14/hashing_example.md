@@ -16,3 +16,22 @@ x, n, c, d가 주어졌을 때, 해시값 h(x), h(x+1), ..., h(x+n) 중 몇 개�
 ### 출력
 각 테스트 케이스마다 c ≤ a·(x+i)+b mod m ≤ d 을 만족하는 0 ≤ i ≤ n의 개수를 출력한다.
 
+### 예제 입력
+    2
+    2 3 1 3 0 1 7
+    1 0 0 8 0 8 9
+
+### 예제 출력
+    1
+    9
+    
+## Solution in Python
+    N = int(input())
+    for i in range(N):
+        data = input()
+        count = 0
+        a, b, x, n, c, d, m = [ int (i) for i in data.split(' ')]
+        for y in range(x, x + n + 1):
+            if (a * y + b) % m >= c and (a * y + b) % m <= d:
+                count += 1
+        print(count)
