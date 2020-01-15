@@ -33,7 +33,7 @@ n명이 입국심사를 위해 줄을 서서 기다리고 있습니다.
 20분이 되었을 때, 두 번째 심사대가 비지만 6번째 사람이 그곳에서 심사를 받지 않고 1분을 더 기다린 후에 첫 번째 심사대에서 심사를 받으면 28분에 모든 사람의 심사가 끝납니다.
 
 
-## Solution
+## Solution in Python
     def solution(n, times):
         min_t = int(min(times) * n / len(times))
         max_t = int(max(times) * n / len(times))
