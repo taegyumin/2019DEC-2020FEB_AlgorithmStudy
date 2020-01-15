@@ -32,6 +32,7 @@ x, n, c, d가 주어졌을 때, 해시값 h(x), h(x+1), ..., h(x+n) 중 몇 개�
         count = 0
         a, b, x, n, c, d, m = [ int (i) for i in data.split(' ')]
         for y in range(x, x + n + 1):
-            if (a * y + b) % m >= c and (a * y + b) % m <= d:
+            h_y = (a * y + b) % m
+            if h_y >= c and h_y <= d:
                 count += 1
         print(count)
