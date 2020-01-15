@@ -38,3 +38,63 @@
     
 ## Solution in Python
 
+
+        class Queue(list):
+            # enqueue == > insert
+            enqueue = list.append
+            # dequeue == > delete
+            def dequeue(self):
+                return self.pop(0)
+
+            def is_empty(self):
+                if not self:
+                    return True
+                else:
+                    return False
+
+            def peek(self):
+                return self[0]
+
+        def stractify(quadtree):
+            result = []
+            for i in range(4):
+                if len(quadtree)==0: break
+                q = quadtree.pop(0)
+                if q == 'x':
+                    result.append(stractify(quadtree))
+                else:
+                    result.append(q)
+            return result
+
+        def decode(code):
+            def temp(code):
+                answer = ''
+                if len(code)==4:
+                    answer += 'x'
+                    for i in code:
+                        answer+=temp(i)
+                    return answer
+                else:
+                    return code
+
+            answer = temp(code)
+            return answer
+            
+        def up_and_down(code):
+            if len(code)==4:
+                return 'x'+up_and_down(code[2])+up_and_down(code[3])+up_and_down(code[0])+up_and_down(code[1])
+            elif len(code)==1:
+                return code
+
+        def left_and_right(code):
+            if len(code)==4:
+                return 'x'+left_and_right(code[1])+left_and_right(code[0])+left_and_right(code[3])+left_and_right(code[2])
+            else:
+                return code
+
+        def up_down_left_and_right(code):
+            if len(code)==4:
+                return 'x'+up_down_left_and_right(code[-1])+up_down_left_and_right(code[-2])+up_down_left_and_right(code[-3])+up_down_left_and_right(code[-4])
+            elif len(code)==1:
+                return code
+
