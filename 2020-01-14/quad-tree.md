@@ -1,4 +1,4 @@
-# Problem: quad-tree reflection
+# Problem: Binary Images' Quad-Tree Compression & Image reflection algorithm
 출처: [https://algospot.com/judge/problem/read/QUADTREE](https://algospot.com/judge/problem/read/QUADTREE)
 
 ## Problem description
