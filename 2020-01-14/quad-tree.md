@@ -37,8 +37,6 @@
     
     
 ## Solution in Python
-
-
         class Queue(list):
             # enqueue == > insert
             enqueue = list.append
@@ -67,34 +65,54 @@
             return result
 
         def decode(code):
-            def temp(code):
-                answer = ''
-                if len(code)==4:
-                    answer += 'x'
-                    for i in code:
-                        answer+=temp(i)
-                    return answer
-                else:
-                    return code
-
-            answer = temp(code)
-            return answer
-            
-        def up_and_down(code):
+            answer = ''
             if len(code)==4:
-                return 'x'+up_and_down(code[2])+up_and_down(code[3])+up_and_down(code[0])+up_and_down(code[1])
-            elif len(code)==1:
-                return code
-
-        def left_and_right(code):
-            if len(code)==4:
-                return 'x'+left_and_right(code[1])+left_and_right(code[0])+left_and_right(code[3])+left_and_right(code[2])
+                answer += 'x'
+                for i in code:
+                    answer+=decode(i)
+                return answer
             else:
                 return code
 
+        def up_and_down(code):
+            if len(code)==4:
+                return [up_and_down(code[2])+up_and_down(code[3])+up_and_down(code[0])+up_and_down(code[1])]
+            #'x'+up_and_down(code[2])+up_and_down(code[3])+up_and_down(code[0])+up_and_down(code[1])
+            elif len(code)==1:
+                return [code]
+
+        def left_and_right(code):
+            if len(code)==4:
+                return [left_and_right(code[1])+left_and_right(code[0])+left_and_right(code[3])+left_and_right(code[2])]
+            else:
+                return [code]
+
         def up_down_left_and_right(code):
             if len(code)==4:
-                return 'x'+up_down_left_and_right(code[-1])+up_down_left_and_right(code[-2])+up_down_left_and_right(code[-3])+up_down_left_and_right(code[-4])
+                return [up_down_left_and_right(code[-1])+up_down_left_and_right(code[-2])+up_down_left_and_right(code[-3])+up_down_left_and_right(code[-4])]
             elif len(code)==1:
-                return code
+                return [code]
 
+        if __name__=="__main__":
+            # w
+            # xbwwb
+            # xbwxwbbwb
+            # xxwwwbxwxwbbbwwxxxwwbbbwwwwbb
+
+            # w
+            # xwbbw
+            # xxbwwbbbw
+            # xxwbxwwxbbwwbwbxwbwwxwwwxbbwb
+
+            quadtree = 'xxwwwbxwxwbbbwwxxxwwbbbwwwwbb'
+            print(quadtree)
+
+            quadtree = Queue(quadtree)
+            code = stractify(quadtree)[0]
+            print(code)
+
+            reflected_code = up_and_down(code)[0]
+            print(reflected_code)
+
+            reflected_quadtree = decode(reflected_code)
+            print(reflected_quadtree)
