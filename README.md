@@ -19,8 +19,7 @@ Dec 2019 - Feb 2020
 - `Jan 10th, 2020` AVL trees and Counting sort 
 - `Jan 14th, 2020` Hashing 
 - `Jan 21st, 2020` Numerics 
-- `Jan 28th, 2020` Graphs 
-- `Feb 02nd, 2020` Shortest Paths
-- `Feb 15th, 2020` Dynamic Programming 1
-- `Feb 18th, 2020` Dynamic Programming 2
-- `Feb 25th, 2020` Wrap-up
+- `Feb 02nd, 2020` Graphs 
+- `Feb 15th, 2020` Shortest Paths 
+- `Feb 18th, 2020` Dynamic Programming 1 
+- `Feb 25th, 2020` Dynamic Programming 2 
